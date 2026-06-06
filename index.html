@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y M Saravana Prasanth - Electrical Engineer & Production Specialist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1e3c72;
+            --secondary-color: #2a5298;
+            --accent-color: #00d4ff;
+            --accent-light: #00e5ff;
+            --text-primary: #f0f4f8;
+            --text-secondary: #b4c7e7;
+            --bg-dark: #0a0e27;
+            --bg-secondary: #141829;
+            --bg-tertiary: #1d2847;
+            --border-color: #2a3f5f;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            --shadow-hover: 0 20px 60px rgba(0, 212, 255, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #0f1530 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Typography */
+        h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -1.5px; }
+        h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; }
+        h3 { font-size: 1.4rem; font-weight: 600; }
+        h4 { font-size: 1.1rem; font-weight: 600; }
+        p { font-size: 1rem; color: var(--text-secondary); }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 1rem 2.2rem;
+            background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+            color: var(--bg-dark);
+            text-decoration: none;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            font-size: 1rem;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.3);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+        }
+
+        .btn-outline:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: var(--accent-light);
+            color: var(--accent-light);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-color), var(--accent-light));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            margin-top: 60px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -200px;
+            right: -100px;
+            animation: float 8s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(42, 82, 152, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -100px;
+            left: 5%;
+            animation: float 10s ease-in-out infinite reverse;
+            z-index: 0;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(30px); }
+        }
+
+        .hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 10;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-light), var(--text-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-title {
+            font-size: 1.4rem;
+            color: var(--accent-color);
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+        }
+
+        .hero-tagline {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2.5s infinite;
+            color: var(--accent-color);
+            font-size: 2rem;
+            z-index: 10;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(15px); }
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 3.5rem;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+            border-radius: 16px;
+            padding: 4rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            margin-top: 2rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+        }
+
+        .info-box {
+            background: var(--bg-tertiary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+            border-left: 4px solid var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .info-box:hover {
+            background: rgba(0, 212, 255, 0.05);
+            transform: translateX(5px);
+        }
+
+        .info-box strong {
+            color: var(--accent-color);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: var(--bg-tertiary);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            border-color: var(--accent-color);
+            background: rgba(0, 212, 255, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: var(--bg-secondary);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .skill-card:hover {
+            border-color: var(--accent-color);
+            background: var(--bg-tertiary);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .skill-title {
+            color: var(--accent-color);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-size: 1.15rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .skill-card:hover .skill-tag {
+            background: var(--accent-color);
+            color: var(--bg-dark);
+            border-color: var(--accent-color);
+        }
+
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+            margin-top: 2rem;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            opacity: 0;
+            animation: slideInLeft 0.6s ease-out forwards;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .timeline-date {
+            color: var(--accent-color);
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding-top: 0.5rem;
+        }
+
+        .timeline-content {
+            background: var(--bg-secondary);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            background: var(--bg-tertiary);
+            transform: translateX(8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .timeline-content h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-company {
+            color: var(--accent-light);
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+
+        .timeline-description {
+            margin-top: 1rem;
+            line-height: 1.8;
+        }
+
+        .timeline-description li {
+            margin-left: 1.5rem;
+            margin-bottom: 0.7rem;
+            color: var(--text-secondary);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .project-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(42, 82, 152, 0.1));
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .project-header h3 {
+            color: var(--accent-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.8rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .project-body {
+            padding: 2rem;
+            flex: 1;
+        }
+
+        .project-body p {
+            margin-bottom: 1rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .tech-badge {
+            background: var(--bg-tertiary);
+            color: var(--accent-light);
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Education Section */
+        .education-list {
+            margin-top: 2rem;
+        }
+
+        .education-item {
+            background: var(--bg-secondary);
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .education-item:hover {
+            border-color: var(--accent-color);
+            background: var(--bg-tertiary);
+            transform: translateX(8px);
+        }
+
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .edu-header h3 {
+            color: var(--accent-light);
+        }
+
+        .edu-year {
+            background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+            color: var(--bg-dark);
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 700;
+            white-space: nowrap;
+            font-size: 0.9rem;
+        }
+
+        .edu-details {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .edu-details strong {
+            color: var(--text-primary);
+        }
+
+        /* Awards Section */
+        .award-card {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .award-card:hover {
+            border-color: var(--accent-color);
+            background: var(--bg-tertiary);
+        }
+
+        .award-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .award-card h3 {
+            color: var(--accent-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .award-issuer {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+            border-radius: 16px;
+            padding: 4rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-text {
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.9rem 1.8rem;
+            background: var(--bg-secondary);
+            color: var(--accent-color);
+            text-decoration: none;
+            border-radius: 8px;
+            border: 2px solid var(--border-color);
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .contact-link:hover {
+            background: var(--accent-color);
+            color: var(--bg-dark);
+            border-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            text-align: center;
+            padding: 2.5rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Scroll Animations */
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: var(--transition);
+        }
+
+        .scroll-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.8rem; }
+            h2 { font-size: 2rem; }
+            h3 { font-size: 1.2rem; }
+
+            nav { padding: 0.8rem 0; }
+            .nav-links { gap: 1.5rem; font-size: 0.9rem; }
+
+            .hero { margin-top: 50px; min-height: 90vh; }
+            .hero-buttons { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+
+            .about { padding: 2.5rem; }
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+
+            section { padding: 4rem 1rem; }
+
+            .timeline-item { grid-template-columns: 1fr; gap: 1rem; }
+            .timeline-date { margin-bottom: 0.5rem; }
+
+            .projects-grid { grid-template-columns: 1fr; }
+            .skills-grid { grid-template-columns: 1fr; }
+
+            .contact { padding: 2.5rem; }
+            .edu-header { flex-direction: column; }
+
+            .nav-links { display: none; }
+
+            .hero::before, .hero::after {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.6rem; }
+
+            .logo { font-size: 1rem; }
+            .nav-container { padding: 0 1rem; }
+
+            section { padding: 3rem 1rem; }
+
+            .hero-tagline { font-size: 1rem; }
+            .hero-title { font-size: 1.1rem; }
+
+            .info-grid { grid-template-columns: 1fr; }
+            .stat-card { padding: 1.5rem; }
+
+            .contact-links { flex-direction: column; gap: 0.8rem; }
+            .contact-link { width: 100%; justify-content: center; }
+
+            .btn { padding: 0.8rem 1.5rem; font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#home" class="logo">SARAVANA</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Y SARAVANA PRASANTH</h1>
+            <p class="hero-title">Electrical Engineer | Production Specialist | Quality Operations</p>
+            <p class="hero-tagline">Driven professional with expertise in production quality operations and electrical engineering. Committed to continuous learning and contributing to organizational success.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn">Get In Touch</a>
+                <a href="mailto:Saravanaprasanth72@Gmail.Com" class="btn btn-outline">Send Email</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about scroll-fade" id="about">
+        <h2>About Me</h2>
+        <div class="about-grid">
+            <div>
+                <p>I'm an Electrical Engineer with a B.Tech from Sanskrithi School of Engineering, specializing in Electrical Electronic Engineering. Currently working as a Production and Quality Operations Specialist at Stellantis Avtec Powertrain India.</p>
+                <p>With a flexible and positive approach to professional challenges, I'm passionate about quality assurance, production optimization, and continuous improvement. I bring strong problem-solving skills, attention to detail, and a commitment to maintaining high standards in every project I undertake.</p>
+                <p>I thrive in collaborative environments where I can contribute my technical knowledge, learn new technologies, and grow professionally. My goal is to leverage my engineering background and production expertise to drive operational excellence.</p>
+                
+                <div class="info-box">
+                    <strong>📍 Location</strong>
+                    Guntakal, Anantapur District, Andhra Pradesh, India
+                </div>
+                <div class="info-box">
+                    <strong>🎯 Professional Goal</strong>
+                    Securing entry-level opportunities in production engineering, quality assurance, or electrical engineering roles where I can apply my technical skills and contribute to organizational success.
+                </div>
+            </div>
+            <div>
+                <div class="info-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">1+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">Major Projects</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Languages</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">1</div>
+                        <div class="stat-label">Award</div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <strong>🌍 Languages</strong>
+                    Hindi • English • Telugu • Tamil
+                </div>
+
+                <div class="info-box">
+                    <strong>📅 Date of Birth</strong>
+                    March 14, 2000
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills scroll-fade" id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-title">💻 Programming</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python (Beginners)</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-title">📊 Tools & Software</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">MS Office</span>
+                    <span class="skill-tag">Word</span>
+                    <span class="skill-tag">Excel</span>
+                    <span class="skill-tag">PowerPoint</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-title">⚙️ Core Competencies</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Production Operations</span>
+                    <span class="skill-tag">Quality Assurance</span>
+                    <span class="skill-tag">Process Optimization</span>
+                    <span class="skill-tag">Problem Solving</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-title">🔧 Manufacturing & Engineering</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Gearbox Operations</span>
+                    <span class="skill-tag">Quality Testing</span>
+                    <span class="skill-tag">Production Planning</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-title">📈 Professional Skills</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Team Collaboration</span>
+                    <span class="skill-tag">Attention to Detail</span>
+                    <span class="skill-tag">Quick Learner</span>
+                    <span class="skill-tag">Adaptability</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-title">🎯 Hobbies & Interests</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Art</span>
+                    <span class="skill-tag">Cooking</span>
+                    <span class="skill-tag">Sports</span>
+                    <span class="skill-tag">Music</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience scroll-fade" id="experience">
+        <h2>Work Experience</h2>
+        <div class="experience-timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">Oct 2024 - Apr 2025</div>
+                <div class="timeline-content">
+                    <h3>Gear Ratio Test Production & Quality Operator</h3>
+                    <div class="timeline-company">Stellantis Avtec Powertrain India Pvt. Ltd. • Hosur, Tamil Nadu</div>
+                    <div class="timeline-description">
+                        <p>Worked as a production and quality operator in the gearbox plant, specifically managing the shaft line operations. Key responsibilities included:</p>
+                        <ul>
+                            <li>Conducting gear ratio tests and quality assurance on production units</li>
+                            <li>Ensuring adherence to quality standards and specifications</li>
+                            <li>Monitoring production processes for efficiency and accuracy</li>
+                            <li>Identifying and reporting quality issues and anomalies</li>
+                            <li>Collaborating with team members to maintain production schedules</li>
+                            <li>Supporting continuous improvement initiatives</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects scroll-fade" id="projects">
+        <h2>Academic Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Model of Thermal Power Plant</h3>
+                    <div class="project-meta">
+                        <span class="meta-item">🎯 Mini Project</span>
+                        <span class="meta-item">📅 1 Month</span>
+                        <span class="meta-item">👤 Design Role</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <p>Developed a working model demonstrating the principles of thermal power generation. This project showcased how steam power plants convert thermal energy into electricity through thermodynamic processes.</p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Design</span>
+                        <span class="tech-badge">Thermal Engineering</span>
+                        <span class="tech-badge">Prototyping</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Mini-Wind Mill Power Generation</h3>
+                    <div class="project-meta">
+                        <span class="meta-item">🎯 Major Project</span>
+                        <span class="meta-item">📅 6 Months</span>
+                        <span class="meta-item">👥 Team Size: 5</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <p>Led the design and assembly of a mini-wind mill system for domestic power generation. The project demonstrated renewable energy principles and practical engineering design, providing hands-on experience in sustainable energy solutions.</p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Renewable Energy</span>
+                        <span class="tech-badge">Mechanical Design</span>
+                        <span class="tech-badge">Assembly</span>
+                        <span class="tech-badge">Team Leadership</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education scroll-fade" id="education">
+        <h2>Education</h2>
+        <div class="education-list">
+            <div class="education-item">
+                <div class="edu-header">
+                    <div>
+                        <h3>B.Tech - Electrical Electronic Engineering</h3>
+                        <div class="edu-details">
+                            <strong>Sanskrithi School of Engineering</strong>
+                            <p>Puttaparthi, Andhra Pradesh, India</p>
+                        </div>
+                    </div>
+                    <div class="edu-year">2018-2023</div>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <div class="edu-header">
+                    <div>
+                        <h3>Intermediate (MPC)</h3>
+                        <div class="edu-details">
+                            <strong>Narayana Junior College</strong>
+                            <p>Guntakal, Andhra Pradesh, India</p>
+                            <p style="margin-top: 0.5rem;">Mathematics • Physics • Chemistry</p>
+                        </div>
+                    </div>
+                    <div class="edu-year">2016-2018</div>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <div class="edu-header">
+                    <div>
+                        <h3>10th (CBSE)</h3>
+                        <div class="edu-details">
+                            <strong>Kendriya Vidyalaya</strong>
+                            <p>Guntakal, Andhra Pradesh, India</p>
+                        </div>
+                    </div>
+                    <div class="edu-year">2015-2016</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 3rem; background: var(--bg-secondary); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border-color); border-left: 4px solid var(--accent-color);">
+            <h3 style="color: var(--accent-light); margin-bottom: 1.5rem;">🏆 Awards & Recognition</h3>
+            <div class="award-card">
+                <div class="award-icon">🥇</div>
+                <h3>Best Defender</h3>
+                <div class="award-issuer">RDT Football Competition - Guntakal Youth Football Association</div>
+                <p style="margin-top: 0.8rem;">Recognized for exceptional defensive performance and team contribution in competitive sports.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact scroll-fade" id="contact">
+        <div class="contact-content">
+            <h2>Let's Connect</h2>
+            <p class="contact-text">I'm actively seeking entry-level opportunities in production engineering, electrical engineering, or quality assurance roles. Feel free to reach out—I'd love to discuss how I can contribute to your organization.</p>
+
+            <div class="contact-links">
+                <a href="mailto:Saravanaprasanth72@Gmail.Com" class="contact-link">
+                    📧 Email
+                </a>
+                <a href="tel:+919989074162" class="contact-link">
+                    📱 Call
+                </a>
+                <a href="https://www.linkedin.com/in/saravana-prasanth" class="contact-link" target="_blank">
+                    💼 LinkedIn
+                </a>
+            </div>
+
+            <a href="mailto:Saravanaprasanth72@Gmail.Com" class="btn">Send Me a Message</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Y Saravana Prasanth. All rights reserved. | Crafted with precision and passion.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#home') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-fade').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Active nav link highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.color = 'var(--text-secondary)';
+                if (link.getAttribute('href') === '#' + current) {
+                    link.style.color = 'var(--accent-color)';
+                }
+            });
+        });
+
+        // Navbar hide/show on scroll
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('nav');
+
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+
+        navbar.style.transition = 'transform 0.3s ease-in-out';
+    </script>
+</body>
+</html>
